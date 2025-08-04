@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function verifyCard() {
+            var txtCard = document.getElementById("txtCard").value;
+            var imgCard = document.getElementById("imgCard");
+
+            if (txtCard.startsWith("4444")) {
+                imgCard.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToU4nxsh_mhWC1gcHWGm3-LV5ICjpjfZ39dg&s";
+            }
+            
+          else  if (txtCard.startsWith("0000")) {
+                imgCard.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToU4nxsh_mhWC1gcHWGm3-LV5ICjpjfZ39dg&s";
+            }
+
+            else if (txtCard.startsWith("5555")) {
+                imgCard.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToU4nxsh_mhWC1gcHWGm3-LV5ICjpjfZ39dg&s";
+            } else {
+                imgCard.alt="Invalid Card";
+                imgCard.src="";
+            }
+        }
+
+         
+
+        function verifyEmail(){
+            var txtEmail = document.getElementById("txtEmail").value;
+            var error = document.getElementById("erro");
+
+            if( txtEmail.endsWith("@gmail.com")){
+                error.innerHTML = "Valid Gmail";
+                error.style.color = "green";
+            } else {
+                error.innerHTML = "Invalid Gmail, it should end with @gmail.com";
+                error.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>verify card</h2>
+    <div >
+        <input type="text" id="txtCard" class="form-control" placeholder="Enter your card number" onkeyup="verifyCard()">
+        <span class="input-group-text">
+            <img width="300" height="300" id="imgCard" src="" alt="">
+        </span>
+    </div>
+    <h2>verify Gmail</h2>
+    <div>
+        <input type="text" onblur="verifyEmail()" class="form-control" id="txtEmail" placeholder="Enter your email">
+        <div id="erro"></div>
+    </div>
+</body>
+</html>
