@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <title>dom hierarchy</title>
+    <script>
+        function bodyload() {
+            window.document.images[0].src = "./sandeep pic.jpg"
+            window.document.forms[0].elements[1].value = "Register"
+            window.document.forms[1].elements[1].value = "Login"
+        }
+    </script>
+</head>
+
+<body onload="bodyload()">
+    <div>
+        <img height="200px" width="200px" border="1">
+    </div>
+
+    <div>
+        <form>
+            <h2>Register</h2>
+            <input type="email">
+            <input type="button">
+        </form>
+    </div>
+
+    <div>
+        <form >
+            <h2>Login</h2>
+            <input type="text">
+            <input type="button">
+        </form>
+    </div>
+</body>
